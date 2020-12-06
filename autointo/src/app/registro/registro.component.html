@@ -1,0 +1,69 @@
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center minh-100">
+            <!-- left column -->
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Registro de participantes</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="participantes">
+                            <div class="form-group">
+                                <label for="inputEmail3">Nombres del propietario</label>
+
+                                <input type="text" class="form-control" name="NombreP" id="nombreP" #NombreP="ngModel" [(ngModel)]="participantes.NombreP" placeholder="Nombre" (ngModelChange)="SololetrasNombresChanged($event)" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3">Apellidos del Propietario </label>
+
+                                <input type="text" class="form-control" name="ApellidosP" #ApellidosP="ngModel" [(ngModel)]="participantes.ApellidosP" id="Apellidos" placeholder="Apellidos"(ngModelChange)="SololetrasApellidosChanged($event)" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-form-label">Email</label>
+
+                                <input type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]="participantes.email" id="email" placeholder="email" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-form-label">Identificacionpropietario</label>
+
+                                <input type="text" class="form-control" name="identificacion" #identificacion="ngModel" [(ngModel)]="participantes.identificacion" id="identificacion" (ngModelChange)="SolonumerosIdentificacionChanged($event)"placeholder="identificacion"  />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-form-label">Telefono</label>
+
+                                <input type="text" class="form-control" name="Telefono" #Telefono="ngModel" [(ngModel)]="participantes.Telefono" (ngModelChange)="SolonumerosTelefonoChanged($event)"  id="Telefono" placeholder="Telefono" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputPassword3">Departamento</label>
+                                <select class="form-control show-tick" name="Departamento" data-live-search="true" id="Departamento" #Departamento="ngModel" [ngModel]="participantes.Departamento" (ngModelChange)="CiudadChange($event)">
+                                     <option value="">seleccione</option>
+                                    <option *ngFor="let d of departamento" value="{{d.iddepartamento}}">{{d.valor}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3">Ciudad</label>
+                                <select class="form-control show-tick" data-live-search="true" name="Ciudad" id="Ciudad">
+                                    <option value="">seleccione</option>
+                                    <option *ngFor="let C of ciudades" value="{{C.idciudad}}">{{C.valor}}</option>
+                                    >
+                                </select>
+                            </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox"  id="habeasdata" name="habeasdata">“La autorización suministrada en el presente formulario faculta a  para que dé a sus datos aquí recopilados el tratamiento señalado en la “Política de Privacidad para el Tratamiento de Datos Personales”  el cual incluye, entre otras, el envío de información promocional, así como la invitación a eventos. El titular de los datos podrá, en cualquier momento, solicitar que la información sea modificada, actualizada o retirada de las bases de datos"  
+                            </label>
+                        </div>
+                            <div class="form-group row">
+                                <button type="button" (click)="RegistrarParticipantes()" class="btn btn-primary">Registrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

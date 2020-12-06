@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>ganadores del sorteo</h2>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">participantes</h4>
+     <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>nombres del participante</th>
+        <th>apellidos del participante</th>
+        <th>ciudad</th>
+        <th>fecha registro</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let g of ganadores">
+        <td>{{g.nombres}}</td>
+        <td>{{g.apellidos}}</td>
+        <td>{{g.ciudad}}</td>
+        <td>{{g.fecharegistro}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+          </div>
+  </div>
+</div>

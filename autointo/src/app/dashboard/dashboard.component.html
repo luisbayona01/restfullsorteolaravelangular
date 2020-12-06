@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="col-sm-4">
+ <input type="button" (click)="Logaout()" class="btn btn-primary btn-block btn-lg" value="cerrarSession">
+ </div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Participantes y Ganadores</h4>
+      <table class="table table-striped" id="Participantes">
+  <thead>
+    <tr>
+      <th>nombres</th>
+      <th>apellidos</th>
+      <th>correo</th>
+      <th>telefono</th>
+      <th>cedula</th>
+      <th>departamentos</th>
+      <th>ciudad</th>
+      <th>ganador</th>
+      <th>fechahoradecreacion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of participantes">
+      <td>{{p.nombres}}</td>
+      <td>{{p.apellidos}}</td>
+      <td>{{p.correo}}</td>
+      <td>{{p.telefono}}</td>
+      <td>{{p.cedula}}</td>
+      <td>{{p.departamentos}}</td>
+      <td>{{p.ciudad}}</td>
+      <td>{{p.ganador}}</td>
+      <td>{{p.fechahoradecreacion}}</td>
+    </tr>
+    
+  </tbody>
+</table>   
+    </div>
+  </div>
+</div>
